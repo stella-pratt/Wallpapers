@@ -17,6 +17,10 @@ body{
 .navspread{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+.resolution{
+    margin: 35px 35px 0 0;
 }
 .logo{
     
