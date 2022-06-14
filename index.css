@@ -20,10 +20,11 @@ body{
     align-items: center;
 }
 .resolution{
-    margin: 35px 35px 0 0;
+    margin: 12px 35px 0 0;
 }
 .logo{
-    
+    height: 80px;
+    margin: 6px 0 0 20px;
 }
 .topnav{
     background-color: blueviolet;
@@ -34,7 +35,7 @@ body{
     display: flex;
     justify-content: left;
 }
-.topnav a{
+.topnav li{
     background-color: #19b84e;
     color: #111111;
     text-align: center;
@@ -45,8 +46,9 @@ body{
     font-weight: 500;
     font-size: 20px;
     padding-top: 35px;
+    list-style: none;
 }
-.topnav a:hover{
+.topnav li:hover{
     background-color: #058a31;
     transition: 0.2s;
 }
