@@ -4,9 +4,10 @@
     border: 0;
     font-family: 'Work Sans', sans-serif;
     font-weight: 300;
+    color: #111111;
 }
 body{
-    height: 200vh;
+
 }
 .header{
     background-color: #19b84e;
@@ -21,21 +22,21 @@ body{
 }
 .resolution{
     margin: 12px 35px 0 0;
+    font-size: 20px;
 }
 .logo{
     height: 80px;
     margin: 6px 0 0 20px;
 }
 .topnav{
-    background-color: blueviolet;
     width: 20%;
     margin: 0 40%;
     position: absolute;
-    overflow: hidden;
     display: flex;
     justify-content: left;
+    cursor: pointer;
 }
-.topnav li{
+.menu_item{
     background-color: #19b84e;
     color: #111111;
     text-align: center;
@@ -44,11 +45,116 @@ body{
     height: 65px;
     font-family: 'Work Sans', sans-serif;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 25px;
     padding-top: 35px;
     list-style: none;
 }
-.topnav li:hover{
+.menu_item:hover{
     background-color: #058a31;
-    transition: 0.2s;
+    transition: 0.5s;
 }
+
+@keyframes growDown {
+  0% {
+    transform: rotateX(-90deg)
+  }
+  70% {
+    transform: rotateX(30deg)
+  }
+  100% {
+    transform: rotateX(0deg)
+  }
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #19b84e;
+    min-width: 50%;
+    z-index: 100;
+    overflow: visible;
+    top: 100px;
+    animation: growDown 0.5s ease-in-out forwards;
+    transform-origin: top center;
+}
+.dropdown li{
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+    z-index: 100;
+    font-size: 20px;
+}
+.dropdown li:hover{
+    background-color: #058a31;
+    transition: 0.5s;
+}
+.menu_item:hover .dropdown{
+    display: block;
+}
+
+
+
+.main{
+    height: 100vh;
+    background-color: #fffafa;
+}
+
+
+.footer{
+    background-color: #19b84e;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer_logo{
+    height: 120px;
+    margin: 40px 0 40px 50px;
+}
+
+
+.light_box{
+    position: relative;
+    width: 200px;
+    margin: 50px 50px 0 50px;
+}
+.switch{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-color: #111111;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.input{
+    position: absolute;
+    display: none;
+}
+.slider{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+.input:checked ~ .slider{
+    background-color: #fffafa;
+}
+.slider::before{
+    content: "";
+    position: absolute;
+    top: 13px;
+    left: 16px;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    box-shadow: inset 28px -4px 0px 0px #fffafa;
+    background-color: #111111;
+    transition: 0.3s;
+}
+.input:checked ~ .slider::before {
+  transform: translateX(95px);
+  background-color: #111111;
+  box-shadow: none;
+}
+

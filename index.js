@@ -5,6 +5,6 @@ if(height > width) {
 } else if(height > 1080 || width > 1920) {
     resolution = "4K"
 } else {
-    resolution = "HD"
+    resolution = "FHD"
 }
 document.getElementById("resolution_text").innerHTML = "Recommended Resolution: " + resolution
