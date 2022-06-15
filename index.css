@@ -111,8 +111,18 @@ body{
     height: 120px;
     margin: 40px 0 40px 50px;
 }
-
-
+.footer_menus{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 50px 0 50px;
+}
+.footer_menus ul li{
+    list-style: none;
+}
+.footer_menu_head{
+    font-weight: 500;
+}
 .light_box{
     position: relative;
     width: 200px;
