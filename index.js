@@ -60,15 +60,27 @@ prevSlide.addEventListener("click", function () {
         slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
     });
 });
-setInterval(moveSlide, 7500)
 
-function moveSlide() {
-  if (curSlide === maxSlide) {
-    curSlide = 0;
-  } else {
-    curSlide++;
-  }
-  slides.forEach((slide, indx) => {
-    slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
-  });
+//  buttons on bottom of slides
+
+const btn1 = document.getElementById("slide_btn-0");
+btn1.addEventListener("click", function (){
+    curSlide = 0
+    slides.forEach((slide, indx) => {
+        slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+    });
+})
+
+
+
+const total_slides = 5
+for (let num = 0; num < total_slides; num ++) {
+    console.log(num)
+    eval("bttn" + num + "=document.getElementById('slide_btn-' + num)")
+    eval("bttn" + num).addEventListener("click", function (){
+        curSlide = num
+        slides.forEach((slide, indx) => {
+            slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+        });
+    })
 }
