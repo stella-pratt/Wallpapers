@@ -117,7 +117,10 @@ body{
 .slide {
     height: 720px;
     position: absolute;
-    transition: all 0.5s;
+    transition: 0.7s ease-in-out;
+}
+.noSlide {
+    transition: 0s;
 }
 
 .slide img {
@@ -219,7 +222,7 @@ body{
     width: 75px;
     height: 75px;
     border-radius: 50%;
-    box-shadow: inset 28px -4px 0px 0px #fffafa;
+    box-shadow: inset 28px -4px 0 0 #fffafa;
     background-color: #111111;
     transition: 0.3s;
 }
