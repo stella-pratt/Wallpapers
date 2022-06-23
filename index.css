@@ -97,7 +97,6 @@ body{
 
 .main{
     background-color: #fffafa;
-    height: 100vh;
 }
 
 .gallery_main{
@@ -170,6 +169,49 @@ body{
 
 
 
+.search{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search_bar{
+    height: 80px;
+    width: 60%;
+    border-radius: 40px;
+    border: #19b84e 2px solid;
+    background-color: #fffafa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search_bar_text{
+    font-size: 50px;
+    background-color: #fffafa;
+    margin-left: 2%;
+    width: 90%;
+}
+.search_bar_text:focus{
+    outline: none;
+}
+.submit{
+    height: 50px;
+    width: 6%;
+    margin-right: 2%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+}
+.submit img{
+    width: 100%;
+}
+
+
+.category_previews{
+    height: 20vh;
+}
 
 
 
