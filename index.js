@@ -14,6 +14,9 @@ document.getElementById("resolution_text").innerHTML = "Recommended Resolution: 
 /* carousel */
 
 
+// make the bottom button of current slide darker
+
+
 // Select all slides
 const slides = document.querySelectorAll(".slide");
 
@@ -75,7 +78,6 @@ btn1.addEventListener("click", function (){
 
 const total_slides = 5
 for (let num = 0; num < total_slides; num ++) {
-    console.log(num)
     eval("bttn" + num + "=document.getElementById('slide_btn-' + num)")
     eval("bttn" + num).addEventListener("click", function (){
         curSlide = num
@@ -83,4 +85,4 @@ for (let num = 0; num < total_slides; num ++) {
             slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
         });
     })
-}
+}d

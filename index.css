@@ -198,7 +198,7 @@ body{
 .submit{
     height: 50px;
     width: 6%;
-    margin-right: 2%;
+    margin-right: 1.5%;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -210,8 +210,23 @@ body{
 
 
 .category_previews{
-    height: 20vh;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
+.homepage_category{
+    height: 300px;
+    width: 90%;
+    margin-bottom: 10px;
+    background-color: coral;
+    border: #19b84e 2px solid;
+}
+.homepage_category h2{
+    font-weight: 500;
+    margin: 5px;
+}
+
 
 
 
