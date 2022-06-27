@@ -9,7 +9,7 @@
     box-sizing: border-box;
 }
 body{
-
+    background-color: #fffafa;
 }
 .header{
     background-color: #19b84e;
@@ -210,23 +210,32 @@ body{
 
 
 .category_previews{
-    background-color: aqua;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 .homepage_category{
-    height: 300px;
-    width: 90%;
+    height: 350px;
+    width: 85%;
     margin-bottom: 10px;
-    background-color: coral;
-    border: #19b84e 2px solid;
+    display: flex;
+    flex-direction: column;
 }
 .homepage_category h2{
     font-weight: 500;
     margin: 5px;
 }
-
+.category_images{
+    width: 100%;
+    border: #19b84e 2px solid;
+    height: 412px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.category_images img{
+    width: 30%;
+}
 
 
 
