@@ -85,4 +85,50 @@ for (let num = 0; num < total_slides; num ++) {
             slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
         });
     })
-}d
+}
+
+
+
+
+
+
+
+
+
+document.querySelectorAll(".category_images img").forEach(image_clicked => {
+    image_clicked.addEventListener("click", function (){
+        const pop_up = document.querySelector(".pop_up")
+        pop_up.style.display = "flex";
+        document.querySelector(".background_shade").style.display = "block";
+        document.body.style.top = -(document.documentElement.scrollTop) + "px"
+        document.body.style.position = "fixed"
+        document.body.style.overflowY = "scroll"
+
+        var disp_image = document.createElement("img");
+        disp_image.src = image_clicked.src
+        disp_image.className = "disp_image"
+        pop_up.prepend(disp_image)
+    })
+})
+
+
+close_button = document.querySelector(".close_pop")
+close_button.addEventListener("click", function (){
+    const pop_up = document.querySelector(".pop_up")
+    pop_up.style.display = "none";
+    document.querySelector(".background_shade").style.display = "none";
+    document.body.style.position = "static"
+    document.body.style.overflowY = "auto"
+})
+
+
+
+
+
+
+
+
+
+
+
+

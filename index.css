@@ -317,3 +317,68 @@ body{
   box-shadow: none;
 }
 
+
+
+
+/* pop up 8 */
+
+.background_shade{
+    z-index: 299;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(17, 17, 17, 0.8);
+    display: none;
+    transition: 0.5s;
+}
+
+.pop_up{
+    position: fixed;
+    height: 80vh;
+    z-index: 300;
+    width: 60vw;
+    background-color: #fffafa;
+    margin: 10vh 20vw;
+    top: 0;
+    left: 0;
+    border-radius: 3vh;
+    padding: 1.5vh;
+    display: none;
+    transition: 0.5s;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.close_pop{
+    cursor: pointer;
+    height: 20px;
+
+}
+.disp_image{
+    width: 100%;
+    bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
