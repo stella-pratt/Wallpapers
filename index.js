@@ -92,7 +92,7 @@ for (let num = 0; num < total_slides; num ++) {
 
 
 
-
+let scroll_amount = 0
 
 
 document.querySelectorAll(".category_images img").forEach(image_clicked => {
@@ -100,14 +100,12 @@ document.querySelectorAll(".category_images img").forEach(image_clicked => {
         const pop_up = document.querySelector(".pop_up")
         pop_up.style.display = "flex";
         document.querySelector(".background_shade").style.display = "block";
-        document.body.style.top = -(document.documentElement.scrollTop) + "px"
+        scroll_amount += document.documentElement.scrollTop
+        document.body.style.top = -(scroll_amount) + "px"
         document.body.style.position = "fixed"
         document.body.style.overflowY = "scroll"
 
-        var disp_image = document.createElement("img");
-        disp_image.src = image_clicked.src
-        disp_image.className = "disp_image"
-        pop_up.prepend(disp_image)
+        document.querySelector(".disp_image").src = image_clicked.src
     })
 })
 
@@ -119,6 +117,8 @@ close_button.addEventListener("click", function (){
     document.querySelector(".background_shade").style.display = "none";
     document.body.style.position = "static"
     document.body.style.overflowY = "auto"
+    window.scrollTo(0, scroll_amount)
+    scroll_amount = 0
 })
 
 
