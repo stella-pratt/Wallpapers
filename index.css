@@ -240,7 +240,7 @@ body{
     justify-content: right;
     align-items: end;
 }
-.category_images img{
+.page_image{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -257,14 +257,20 @@ body{
     transition: 0.3s;
     box-shadow: 0 0 10px #111111;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.category_images img:hover + .download{
+.page_image:hover + .download{
     opacity: 1;
     margin: 15px;
 }
 .download:hover{
     opacity: 1;
     margin: 15px;
+}
+.download_image{
+    height: 60%;
 }
 
 
