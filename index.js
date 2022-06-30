@@ -87,9 +87,6 @@ for (let num = 0; num < total_slides; num ++) {
     })
 }
 
-function move_left() {
-
-}
 
 
 
@@ -101,8 +98,8 @@ function move_left() {
 let scroll_amount = 0
 let pop_up_open = false
 
-document.querySelectorAll(".category_images img").forEach(image_clicked => {
-    image_clicked.addEventListener("click", function (){
+document.querySelectorAll(".download").forEach(button_clicked => {
+    button_clicked.addEventListener("click", function (){
         const pop_up = document.querySelector(".pop_up")
         pop_up.style.display = "flex";
         document.querySelector(".background_shade").style.display = "block";
@@ -111,7 +108,9 @@ document.querySelectorAll(".category_images img").forEach(image_clicked => {
         document.body.style.position = "fixed"
         document.body.style.overflowY = "scroll"
         pop_up_open = true
-        document.querySelector(".disp_image").src = image_clicked.src
+        let parent_image = button_clicked.closest(".category_image_wrapper")
+        parent_image= parent_image.querySelector(".page_image")
+        document.querySelector(".disp_image").src = parent_image.src
     })
 })
 
