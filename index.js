@@ -87,13 +87,19 @@ for (let num = 0; num < total_slides; num ++) {
     })
 }
 
+function move_left() {
+
+}
+
+
+
 
 
 
 
 
 let scroll_amount = 0
-
+let pop_up_open = false
 
 document.querySelectorAll(".category_images img").forEach(image_clicked => {
     image_clicked.addEventListener("click", function (){
@@ -104,14 +110,30 @@ document.querySelectorAll(".category_images img").forEach(image_clicked => {
         document.body.style.top = -(scroll_amount) + "px"
         document.body.style.position = "fixed"
         document.body.style.overflowY = "scroll"
-
+        pop_up_open = true
         document.querySelector(".disp_image").src = image_clicked.src
     })
 })
 
 
 close_button = document.querySelector(".close_pop")
-close_button.addEventListener("click", function (){
+close_button.addEventListener("click", close_pop_up)
+
+
+document.addEventListener("keydown", function (pressed_key){
+    if(pop_up_open === true && pressed_key.code === "Escape"){
+        close_pop_up()
+    }
+})
+
+
+
+
+
+
+
+function close_pop_up() {
+    pop_up_open = false
     const pop_up = document.querySelector(".pop_up")
     pop_up.style.display = "none";
     document.querySelector(".background_shade").style.display = "none";
@@ -119,9 +141,8 @@ close_button.addEventListener("click", function (){
     document.body.style.overflowY = "auto"
     window.scrollTo(0, scroll_amount)
     scroll_amount = 0
-})
 
-
+}
 
 
 

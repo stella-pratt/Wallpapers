@@ -142,7 +142,7 @@ body{
     cursor: pointer;
     transition: 0.3s;
 }
-.slide_button_selected{
+.slide_button:hover{
     background-color: #9b9696;
 }
 
