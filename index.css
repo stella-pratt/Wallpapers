@@ -233,7 +233,7 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-.category_image_wrapper{
+.image_wrapper{
     width: 30%;
     background-color: deeppink;
     display: flex;
@@ -426,6 +426,8 @@ body{
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    text-decoration: none;
+    text-underline: none;
 }
 .download_option h6{
     font-weight: 500;
