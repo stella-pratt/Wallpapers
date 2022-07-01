@@ -108,7 +108,7 @@ body{
 }
 .gallery {
     height: 720px;
-    width: 1280px;
+    aspect-ratio: 16 / 9;
     position: relative;
     overflow: hidden;
     display: flex;
