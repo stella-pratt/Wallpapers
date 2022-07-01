@@ -1,3 +1,20 @@
+let scenery = [4, 5, 6, 7, 8, 9, 10]
+let abstract = [1, 2, 3]
+let light = [2, 3, 4, 5, 7, 8]
+let dark = [1, 6, 10]
+let colourful = [2, 7, 8, 9]
+
+
+
+
+
+
+
+
+
+
+
+
 let height = window.screen.height
 let width = window.screen.width
 if(height > width) {
