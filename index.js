@@ -1,8 +1,30 @@
-let scenery = [4, 5, 6, 7, 8, 9, 10]
-let abstract = [1, 2, 3]
-let light = [2, 3, 4, 5, 7, 8]
-let dark = [1, 6, 10]
-let colourful = [2, 7, 8, 9]
+let wallpaper_dict = {
+    "scenery": [4, 5, 6, 7, 8, 9, 10],
+    "abstract": [1, 2, 3],
+    "light": [2, 3, 4, 5, 7, 8],
+    "dark": [1, 6, 10],
+    "colourful": [2, 7, 8, 9]
+}
+
+
+
+
+
+let homepage_category = document.querySelectorAll(".homepage_category")
+
+homepage_category.forEach((category_parent) =>{
+    let category_name = category_parent.querySelector(".category_name")
+    let image_wrapper = category_parent.querySelectorAll(".image_wrapper")
+    let category = category_name.innerHTML.toLowerCase()
+    console.log(category)
+    image_wrapper.forEach((wrapper) =>{
+        let real_image = wrapper.querySelector(".page_image")
+        let insert_image = wallpaper_dict[category][Math.floor(Math.random()*wallpaper_dict[category].length)]
+        wallpaper_dict[category].splice(wallpaper_dict[category].indexOf(insert_image), 1)
+        real_image.src = "images/Final%20images/thumbnail/" + insert_image + ".jpg"
+    })
+})
+
 
 
 

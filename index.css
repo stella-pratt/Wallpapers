@@ -235,7 +235,6 @@ body{
 }
 .image_wrapper{
     width: 30%;
-    background-color: deeppink;
     display: flex;
     justify-content: right;
     align-items: end;
