@@ -79,18 +79,25 @@ body{
     transform-origin: top center;
 }
 .dropdown li{
-    padding: 20px;
     text-decoration: none;
     display: block;
     z-index: 100;
     font-size: 20px;
 }
-.dropdown li:hover{
-    background-color: #058a31;
-    transition: 0.5s;
-}
 .menu_item:hover .dropdown{
     display: block;
+}
+.menu_button{
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    padding: 20px;
+    font-size: 20px;
+    background-color: #19b84e;
+}
+.menu_button:hover{
+    background-color: #058a31;
+    transition: 0.3s;
 }
 
 
@@ -392,6 +399,14 @@ body{
     font-size: 25px;
 }
 
+
+
+
+
+/* categories page */
+.test_main{
+    height: 100vh;
+}
 
 
 
