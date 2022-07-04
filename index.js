@@ -16,7 +16,6 @@ homepage_category.forEach((category_parent) =>{
     let category_name = category_parent.querySelector(".category_name")
     let image_wrapper = category_parent.querySelectorAll(".image_wrapper")
     let category = category_name.innerHTML.toLowerCase()
-    console.log(category)
     image_wrapper.forEach((wrapper) =>{
         let real_image = wrapper.querySelector(".page_image")
         let insert_image = wallpaper_dict[category][Math.floor(Math.random()*wallpaper_dict[category].length)]
