@@ -1,9 +1,9 @@
 let wallpaper_dict = {
     "scenery": [4, 5, 6, 7, 8, 9, 10],
-    "abstract": [1, 2, 3],
-    "light": [2, 3, 4, 5, 7, 8],
-    "dark": [1, 6, 10],
-    "colourful": [2, 7, 8, 9]
+    "abstract": [1, 2, 3, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    "light": [2, 3, 4, 5, 7, 8, 11, 12, 13, 16, 20],
+    "dark": [1, 6, 10, 14, 15, 17, 19, 21],
+    "colourful": [2, 7, 8, 9, 11, 12, 13, 16, 17, 18, 20]
 }
 
 //build presets for appending
@@ -28,6 +28,9 @@ for(let i = 0; i < num_rows; i++){
     let row = document.createElement("div")
     row.className = "image_row"
     for (let j = 0; j < 3; j++) {
+        let image_box = document.createElement("div")
+        image_box.className = "image_box"
+
         let image_append = document.createElement("img")
         image_append.className = "main_images"
         //get random image and remove it from the list
@@ -36,7 +39,18 @@ for(let i = 0; i < num_rows; i++){
 
         //make the source for the image
         image_append.src = "images/Final%20images/thumbnail/" + image_num + ".jpg"
-        row.appendChild(image_append)
+        image_box.appendChild(image_append)
+
+        let download = document.createElement("div")
+        download.className = "download"
+        let download_image = document.createElement("img")
+        download_image.src = "images/download.png"
+        download_image.alt = "download"
+        download_image.className = "download_image"
+        download.appendChild(download_image)
+
+        image_box.appendChild(download)
+        row.appendChild(image_box)
     }
 
 
@@ -75,8 +89,8 @@ document.querySelectorAll(".download").forEach(button_clicked => {
         document.body.style.position = "fixed"
         document.body.style.overflowY = "scroll"
         pop_up_open = true
-        let parent_image = button_clicked.closest(".image_wrapper")
-        parent_image = parent_image.querySelector(".page_image")
+        let parent_image = button_clicked.closest(".image_box")
+        parent_image = parent_image.querySelector(".main_images")
         document.querySelector(".disp_image").src = parent_image.src
         document.querySelector("#fourK").href = parent_image.src.replace("/thumbnail/", "/4K/")
         document.querySelector("#fhd").href = parent_image.src.replace("/thumbnail/", "/FHD/")
