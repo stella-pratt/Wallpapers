@@ -427,6 +427,10 @@ body{
     height: 100%;
     object-fit: cover;
 }
+.main_images:hover + .download{
+    opacity: 1;
+    margin: 15px;
+}
 
 
 
