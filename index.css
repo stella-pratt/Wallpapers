@@ -404,8 +404,18 @@ body{
 
 
 /* categories page */
-.test_main{
-    height: 100vh;
+.categories_main{
+    min-height: 100vh;
+}
+.image_row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 5vh;
+}
+.main_images{
+    width: 25%;
 }
 
 
