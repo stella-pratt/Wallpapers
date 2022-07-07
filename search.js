@@ -1,10 +1,3 @@
-let wallpaper_dict = {
-    "scenery": [4, 5, 6, 7, 8, 9, 10, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47],
-    "abstract": [1, 2, 3, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-    "light": [2, 3, 4, 5, 7, 8, 11, 12, 13, 16, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 36, 37, 39, 41, 42, 43, 44, 46],
-    "dark": [1, 6, 10, 14, 15, 17, 19, 21, 33, 34, 45, 47],
-    "colourful": [2, 7, 8, 9, 11, 12, 13, 16, 17, 18, 20, 24, 28, 34, 40, 45]
-}
 let wallpaper_info = [
     "black deer illuminated glowing lime green dark antlers moose elk",
     "sun glowing spikey spots yellow red orange white balls",
@@ -36,7 +29,23 @@ let wallpaper_info = [
     "green lawn grass flowers hedge bush trees",
     "mountain snow cliff rock boulder trees glacier",
     "mountain snow cliff rock boulder trees glacier",
-    "mountain valleys hills grass "
+    "mountain valleys hills grass fog mist clouds rocky scree",
+    "skiing snow ice trees mountain range glacier ridge",
+    "hill grass trees dark sunset glow mountain night",
+    "hill dirt rocks slope sunset sunrise glow stony",
+    "hill grass glow sunset dusk mountain top",
+    "day hill rocks dirt grass green peak boulder pile",
+    "beach marshes estuary seaweed sand rocks water ocean sea",
+    "water sun grass edge shoreline estuary yellow dark",
+    "snow water lake mountain hills grass reflection sky",
+    "sunset snow hills water reflection grass land",
+    "fjord water reflection snow grass sky horizon",
+    "snow water edge grass iceberg arctic river sky white",
+    "yellow snow iceberg water cold river sunset",
+    "beach sand water ocean sea daytime waves foam shallow",
+    "waves water ocean sunset night sea",
+    "waves ocean water sea yellow orange horizon beach",
+    "waves ocean water sea blue horizon beach",
 ]
 
 
