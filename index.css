@@ -194,6 +194,11 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+.search_bar form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .search_bar_text{
     font-size: 50px;
     background-color: #fffafa;
@@ -407,7 +412,7 @@ body{
 
 /* categories page */
 .categories_main{
-
+    min-height: 100vh;
 }
 .image_row{
     display: flex;

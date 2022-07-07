@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="topnav">
+            <div class="menu_item">Categories
+                <ul class="dropdown">
+                    <li>
+                        <form action="categories.html" method="GET">
+                            <input class="menu_button" type="submit" name="category" value="Scenery"/>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="categories.html" method="GET">
+                            <input class="menu_button" type="submit" name="category" value="Abstract"/>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="categories.html" method="GET">
+                            <input class="menu_button" type="submit" name="category" value="Light"/>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="categories.html" method="GET">
+                            <input class="menu_button" type="submit" name="category" value="Dark"/>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="categories.html" method="GET">
+                            <input class="menu_button" type="submit" name="category" value="Colourful"/>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="menu_item">Tutorial</div>
+        </div>
+        <div class="navspread">
+            <a href="index.html"><img src="images/logo.png" alt="logo" class="logo"></a>
+
+            <div class="resolution">
+                <p id="resolution_text">Recommended Resolution: Error</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="categories_main"></div>
+
+
+    <div class="footer">
+        <img src="images/logo.png" alt="logo" class="footer_logo">
+        <div class="footer_menus">
+            <ul>
+                <li class="footer_menu_head">Site Map:</li>
+                <li><br></li>
+                <li>Home</li>
+                <li><br></li>
+                <li>Categories</li>
+                <li><br></li>
+                <li>Tutorial</li>
+            </ul>
+        </div>
+        <div class="footer_menus" id="contact">
+            <ul>
+                <li class="footer_menu_head">Contact:</li>
+                <li><br></li>
+                <li>Name - Sebastian Pratt</li>
+                <li><br></li>
+                <li>Email -
+                    <a href="mailto: sebastian.pratt@student.onslow.school.nz">
+                        sebastian.pratt@student.onslow.school.nz</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="background_shade"></div>
+    <div class="pop_up">
+        <img class="disp_image" src="">
+        <div class="pop_top_menu">
+            <div class="download_options">
+                <a class="download_option" id="fourK" href=""
+                   download="4K-wallpaper">
+                    <h6>4K</h6>
+                    <p>3840✕2160</p>
+                </a>
+                <a class="download_option" id="fhd" href=""
+                   download="FHD_wallpaper">
+                    <h6>FHD</h6>
+                    <p>1920✕1080</p>
+                </a>
+                <a class="download_option" id="mobile" href=""
+                   download="Mobile_wallpaper">
+                    <h6>Mobile</h6>
+                    <p>1440✕3088</p>
+                </a>
+            </div>
+            <img src="images/close.png" class="close_pop">
+        </div>
+
+    </div>
+</body>
+</html>
+
+<!-- load js last so webpage is loaded -->
+<script src="search.js"></script>
