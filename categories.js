@@ -6,7 +6,45 @@ let wallpaper_dict = {
     "colourful": [2, 7, 8, 9, 11, 12, 13, 16, 17, 18, 20, 24, 28, 34, 40, 45]
 }
 
-//build presets for appending
+//make function for loading four rows
+function load_rows() {
+    if(num_rows >= 4){
+        for(let i = 0; i < 4; i++){
+            let row = document.createElement("div")
+            row.className = "image_row"
+            for (let j = 0; j < 3; j++) {
+                let image_box = document.createElement("div")
+                image_box.className = "image_box"
+
+                let image_append = document.createElement("img")
+                image_append.className = "main_images"
+                //get random image and remove it from the list
+                let image_num = wallpaper_dict[page_category][Math.floor(Math.random()*wallpaper_dict[page_category].length)]
+                wallpaper_dict[page_category].splice(wallpaper_dict[page_category].indexOf(image_num), 1)
+
+                //make the source for the image
+                image_append.src = "images/Final%20images/thumbnail/" + image_num + ".jpg"
+                image_box.appendChild(image_append)
+
+                let download = document.createElement("div")
+                download.className = "download"
+                let download_image = document.createElement("img")
+                download_image.src = "images/download.png"
+                download_image.alt = "download"
+                download_image.className = "download_image"
+                download.appendChild(download_image)
+
+                image_box.appendChild(download)
+                row.appendChild(image_box)
+            }
+            document.querySelector(".categories_main").appendChild(row)
+        }
+        num_rows -= 4
+        if(num_rows <= 4){
+            document.querySelector(".load_more").remove()
+        }
+    }
+}
 
 
 
@@ -23,39 +61,11 @@ document.title = page_category.charAt(0).toUpperCase() + page_category.slice(1)
 
 //calculate the number of rows needed
 let num_rows = Math.floor((wallpaper_dict[page_category].length)/3)
-
-for(let i = 0; i < num_rows; i++){
-    let row = document.createElement("div")
-    row.className = "image_row"
-    for (let j = 0; j < 3; j++) {
-        let image_box = document.createElement("div")
-        image_box.className = "image_box"
-
-        let image_append = document.createElement("img")
-        image_append.className = "main_images"
-        //get random image and remove it from the list
-        let image_num = wallpaper_dict[page_category][Math.floor(Math.random()*wallpaper_dict[page_category].length)]
-        wallpaper_dict[page_category].splice(wallpaper_dict[page_category].indexOf(image_num), 1)
-
-        //make the source for the image
-        image_append.src = "images/Final%20images/thumbnail/" + image_num + ".jpg"
-        image_box.appendChild(image_append)
-
-        let download = document.createElement("div")
-        download.className = "download"
-        let download_image = document.createElement("img")
-        download_image.src = "images/download.png"
-        download_image.alt = "download"
-        download_image.className = "download_image"
-        download.appendChild(download_image)
-
-        image_box.appendChild(download)
-        row.appendChild(image_box)
-    }
+load_rows()
 
 
-    document.querySelector(".categories_main").appendChild(row)
-}
+
+
 
 
 

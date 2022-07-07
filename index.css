@@ -421,7 +421,6 @@ body{
     justify-content: right;
     align-items: end;
 }
-
 .main_images{
     width: 100%;
     height: 100%;
@@ -430,6 +429,24 @@ body{
 .main_images:hover + .download{
     opacity: 1;
     margin: 15px;
+}
+.load_more{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.load_button{
+    height: 5vh;
+    width: 15%;
+    border: #19b84e 2px solid;
+    border-radius: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;
+    cursor: pointer;
 }
 
 
