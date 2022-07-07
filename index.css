@@ -28,6 +28,7 @@ body{
 .logo{
     height: 80px;
     margin: 6px 0 0 20px;
+    cursor: pointer;
 }
 .topnav{
     width: 20%;
@@ -298,6 +299,7 @@ body{
 .footer_logo{
     height: 120px;
     margin: 40px 0 40px 50px;
+    cursor: pointer;
 }
 .footer_menus{
     display: flex;
