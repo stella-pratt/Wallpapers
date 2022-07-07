@@ -28,8 +28,15 @@ let wallpaper_info = [
     "mushrooms pink white red cute pattern",
     "pattern tessellation purple blue hexagon shapes outline",
     "snowy grass frost trees pine tall mist white green forest clouds",
-    "lake valley trees cliff rocks green blue farms rolling hills"
-    ""
+    "lake valley trees cliff rocks green blue farms rolling hills",
+    "sunset water beach sand shallow golden yellow waves reflection",
+    "beach shoreline water sea ocean waves foam sand blue white yellow",
+    "beach shoreline water sea ocean waves foam sand blue white yellow gravel",
+    "grass lawn green hedges bushes backyard light",
+    "green lawn grass flowers hedge bush trees",
+    "mountain snow cliff rock boulder trees glacier",
+    "mountain snow cliff rock boulder trees glacier",
+    "mountain valleys hills grass "
 ]
 
 
