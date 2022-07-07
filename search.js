@@ -27,6 +27,9 @@ let wallpaper_info = [
     "whale blue white cool ocean water sea cute",
     "mushrooms pink white red cute pattern",
     "pattern tessellation purple blue hexagon shapes outline",
+    "snowy grass frost trees pine tall mist white green forest clouds",
+    "lake valley trees cliff rocks green blue farms rolling hills"
+    ""
 ]
 
 
