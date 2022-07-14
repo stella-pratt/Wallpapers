@@ -54,11 +54,21 @@ let wallpaper_info = [
     "light bulb glowing dark wire yellow black",
     "black stars grey silver gradient",
     "rose flower colour gradient red orange green petals pink",
-    "kiwifuit green seeds pink brown fruit slice",
+    "kiwifruit green seeds pink brown fruit slice",
     "timer countdown clock watch zero",
     "orange yellow shards cracked gradient",
     "blue purple light waves lines wiggles",
     "blue purple light waves lines wiggles blurry",
+    "bark trees moss trunk nature leaves forest green",
+    "path trees moss leaves forest plants green",
+    "green focus droplet water branch leaves stem leaf",
+    "moss macro close grass green leaves",
+    "moss macro close grass green leaves",
+    "trunk brown sky leaves pine forest trees moss",
+    "rimu leaves tree green nature forest",
+    "floor leaves dead rock sticks grey brown",
+    "leaf hanging water droplet focus tree green",
+    "ferns leaves leaf green nature"
 ]
 
 
