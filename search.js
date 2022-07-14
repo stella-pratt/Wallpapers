@@ -46,6 +46,19 @@ let wallpaper_info = [
     "waves water ocean sunset night sea",
     "waves ocean water sea yellow orange horizon beach",
     "waves ocean water sea blue horizon beach",
+    "orange yellow triangles gradient",
+    "gradient yellow pink blue purple wiggly lines",
+    "shards blue pink purple gradient shattered",
+    "tree cherry blue pink leaves wood",
+    "green dots black grid circles gradient",
+    "light bulb glowing dark wire yellow black",
+    "black stars grey silver gradient",
+    "rose flower colour gradient red orange green petals pink",
+    "kiwifuit green seeds pink brown fruit slice",
+    "timer countdown clock watch zero",
+    "orange yellow shards cracked gradient",
+    "blue purple light waves lines wiggles",
+    "blue purple light waves lines wiggles blurry",
 ]
 
 
@@ -93,7 +106,7 @@ for(let i = num_rows; i > 0; i--) {
         matching_wallpapers.splice(matching_wallpapers.indexOf(image_num), 1)
 
         //make the source for the image
-        image_source = "images/Final%20images/thumbnail/" + image_num + ".jpg"
+        let image_source = "images/Final%20images/thumbnail/" + image_num + ".jpg"
         if (!image_source.includes("undefined")) {
             image_append.src = image_source
             image_box.appendChild(image_append)
