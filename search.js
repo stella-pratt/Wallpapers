@@ -25,7 +25,7 @@ let wallpaper_info = [
     "sunset water beach sand shallow golden yellow waves reflection",
     "beach shoreline water sea ocean waves foam sand blue white yellow",
     "beach shoreline water sea ocean waves foam sand blue white yellow gravel",
-    "grass lawn green hedges bushes backyard light",
+    "grass lawn green hedges bushes backyard",
     "green lawn grass flowers hedge bush trees",
     "mountain snow cliff rock boulder trees glacier",
     "mountain snow cliff rock boulder trees glacier",
@@ -51,14 +51,14 @@ let wallpaper_info = [
     "shards blue pink purple gradient shattered",
     "tree cherry blue pink leaves wood",
     "green dots black grid circles gradient",
-    "light bulb glowing dark wire yellow black",
+    "lightbulb glowing dark wire yellow black",
     "black stars grey silver gradient",
     "rose flower colour gradient red orange green petals pink",
     "kiwifruit green seeds pink brown fruit slice",
     "timer countdown clock watch zero",
     "orange yellow shards cracked gradient",
-    "blue purple light waves lines wiggles",
-    "blue purple light waves lines wiggles blurry",
+    "blue purple waves lines wiggles",
+    "blue purple waves lines wiggles blurry",
     "bark trees moss trunk nature leaves forest green",
     "path trees moss leaves forest plants green",
     "green focus droplet water branch leaves stem leaf",
@@ -122,13 +122,17 @@ let wallpaper_info = [
     "bricks brown wall stone",
     "pebbles stones rocks grey green plant sprout"
 ]
+let wallpaper_dict = {
+    "scenery":   [4, 5, 6, 7, 8, 9, 10, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119],
+    "abstract":  [1, 2, 3, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60],
+    "light":     [2, 3, 4, 5, 7, 8, 11, 12, 13, 16, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 36, 37, 39, 41, 42, 43, 44, 46, 48, 51, 55, 56, 58, 63, 66, 67, 68, 79, 80, 81, 82, 83, 88, 89, 92, 93, 94, 95, 98, 105, 109, 112, 115, 121],
+    "dark":      [1, 6, 10, 14, 15, 17, 19, 21, 33, 34, 45, 47, 53, 54, 57, 122],
+    "colourful": [2, 7, 8, 9, 11, 12, 13, 16, 17, 18, 20, 24, 28, 34, 40, 45, 48, 49, 50, 52, 55, 58, 59, 60, 64, 65, 70, 71, 87, 91, 101, 103, 106, 107, 108, 118, 120]
+}
 
 
 
-
-
-
-matching_wallpapers = []
+let matching_wallpapers = [];
 //get all parameters from the url
 const the_url = window.location.search;
 const url_parameters = new URLSearchParams(the_url);
@@ -136,7 +140,19 @@ const url_parameters = new URLSearchParams(the_url);
 //get the search terms
 const search_terms = url_parameters.get('search').toLowerCase().split(" ")
 
+
+
+
+
+
 for (let i = 0; i < search_terms.length; i++) {
+    for(let p = 0; p < Object.keys(wallpaper_dict).length; p++) {
+        if (Object.keys(wallpaper_dict)[p] === search_terms[i]) {
+            for (let f = 0; f < wallpaper_dict[Object.keys(wallpaper_dict)[p]].length; f++) {
+                matching_wallpapers.push(wallpaper_dict[Object.keys(wallpaper_dict)[p]][f])
+            }
+        }
+    }
     for (let j = 0; j < wallpaper_info.length; j++) {
         if(wallpaper_info[j].includes(search_terms[i])){
             if(!matching_wallpapers.includes(j+1)) {
@@ -145,7 +161,7 @@ for (let i = 0; i < search_terms.length; i++) {
         }
     }
 }
-console.log(matching_wallpapers)
+
 
 
 //fix
@@ -200,6 +216,7 @@ for(let i = num_rows; i > 0; i--) {
 //resolution
 let height = window.screen.height
 let width = window.screen.width
+let resolution = "ERROR"
 if(height > width) {
     resolution = "Mobile"
 } else if(height > 1080 || width > 1920) {
@@ -232,7 +249,7 @@ document.querySelectorAll(".download").forEach(button_clicked => {
         document.querySelector("#mobile").href = parent_image.src.replace("/thumbnail/", "/mobile/")
     })
 })
-close_button = document.querySelector(".close_pop")
+let close_button = document.querySelector(".close_pop")
 close_button.addEventListener("click", close_pop_up)
 document.addEventListener("keydown", function (pressed_key){
     if(pop_up_open === true && pressed_key.code === "Escape"){
