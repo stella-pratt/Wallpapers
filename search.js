@@ -155,12 +155,19 @@ for (let i = 0; i < search_terms.length; i++) {
     }
     for (let j = 0; j < wallpaper_info.length; j++) {
         if(wallpaper_info[j].includes(search_terms[i])){
-            if(!matching_wallpapers.includes(j+1)) {
-                matching_wallpapers.push(j + 1)
+            for(let p = 0; p < matching_wallpapers.length; p++){
+                if(matching_wallpapers[p][1] === j+1){
+                    matching_wallpapers[p][0] ++
+                }else{
+                    matching_wallpapers.push([1, j+1])
+                }
             }
         }
     }
 }
+//need to allow for 0 length of matching wallpaper list
+// the else needs to not happen every time in for loop
+
 
 
 
@@ -179,10 +186,10 @@ for(let i = num_rows; i > 0; i--) {
         image_box.className = "image_box"
         let image_append = document.createElement("img")
         image_append.className = "main_images"
-        //get random image and remove it from the list
-        let image_num = matching_wallpapers[Math.floor(Math.random() * matching_wallpapers.length)]
-        matching_wallpapers.splice(matching_wallpapers.indexOf(image_num), 1)
 
+        let image_num = matching_wallpapers[0]
+        matching_wallpapers.splice(0,1)
+        image_num = image_num[1]
         //make the source for the image
         let image_source = "images/Final%20images/thumbnail/" + image_num + ".jpg"
         if (!image_source.includes("undefined")) {
