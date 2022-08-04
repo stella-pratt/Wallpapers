@@ -15,8 +15,8 @@ let wallpaper_info = [
     "pattern black white gray shapes gradient tetrahedron",
     "blue arrow black gradient triangles down",
     "leaves leaf blue pink pastel pattern",
-    "red orange triangle pattern black tessellation cool",
-    "orange red triangle pattern gradient ",
+    "red orange triangles pattern black tessellation cool",
+    "orange red triangle pattern gradient pink",
     "whale blue white cool ocean water sea cute",
     "mushrooms pink white red cute pattern",
     "pattern tessellation purple blue hexagon shapes outline",
@@ -146,33 +146,90 @@ const search_terms = url_parameters.get('search').toLowerCase().split(" ")
 
 
 for (let i = 0; i < search_terms.length; i++) {
-    for(let p = 0; p < Object.keys(wallpaper_dict).length; p++) {
-        if (Object.keys(wallpaper_dict)[p] === search_terms[i]) {
-            for (let f = 0; f < wallpaper_dict[Object.keys(wallpaper_dict)[p]].length; f++) {
-                matching_wallpapers.push(wallpaper_dict[Object.keys(wallpaper_dict)[p]][f])
-            }
-        }
-    }
     for (let j = 0; j < wallpaper_info.length; j++) {
         if(wallpaper_info[j].includes(search_terms[i])){
-            for(let p = 0; p < matching_wallpapers.length; p++){
-                if(matching_wallpapers[p][1] === j+1){
-                    matching_wallpapers[p][0] ++
-                }else{
+            if (matching_wallpapers.length < 1){
+                //if the list is empty add the first wallpaper
+                matching_wallpapers.push([1, j+1])
+            } else{
+                //loop through matching wallpapers and check if is already here
+                let modification = false
+                for(let p = 0; p < matching_wallpapers.length; p++){
+                    if(matching_wallpapers[p][1] === j+1){
+                        //increase the count if a wallpaper already exists
+                        matching_wallpapers[p][0] ++
+                        modification = true
+                    }
+                }
+                if (modification === false){
+                    // if the wallpaper doesnt exist yet add it
                     matching_wallpapers.push([1, j+1])
                 }
             }
         }
     }
 }
-//need to allow for 0 length of matching wallpaper list
-// the else needs to not happen every time in for loop
 
 
 
 
-//fix
-//calculate the number of rows needed
+
+//no search results
+if (matching_wallpapers.length === 0){
+    no_match = document.getElementById("no_match")
+    search_item = url_parameters.get("search")
+    if(search_item.trim().length < 15){
+        no_match.innerHTML = "Your search for <b>'" + search_item.trim() + "'</b> didn't match any results"
+    } else {
+        no_match.innerHTML = "Your search for <b>'" + search_item.substring(0, 15).trim() + "...'</b> didn't match any results"
+    }
+} else {
+    document.querySelector(".no_results").remove()
+}
+
+
+
+
+
+
+
+
+
+
+//randomize the list
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex !== 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+shuffle(matching_wallpapers)
+
+
+//sort list by number of matches
+const a = matching_wallpapers;
+a.sort(sortFunction);
+
+function sortFunction(a, b) {
+    if (a[0] === b[0]) {
+        return 0;
+    }
+    else {
+        return (a[0] < b[0]) ? -1 : 1;
+    }
+}
+matching_wallpapers = a.reverse()
 
 
 num_rows = Math.ceil(matching_wallpapers.length / 3)

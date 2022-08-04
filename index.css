@@ -457,10 +457,19 @@ body{
 }
 
 
+.no_results{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+}
+.no_results p {
+    font-size: 30px;
+}
 
-
-
-
+b {
+    font-weight: 500;
+}
 
 
 
