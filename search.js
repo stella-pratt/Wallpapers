@@ -295,6 +295,7 @@ document.getElementById("resolution_text").innerHTML = "Recommended Resolution: 
 //pop_up
 let scroll_amount = 0
 let pop_up_open = false
+
 document.querySelectorAll(".download").forEach(button_clicked => {
     button_clicked.addEventListener("click", function (){
         const pop_up = document.querySelector(".pop_up")
