@@ -471,6 +471,14 @@ b {
     font-weight: 500;
 }
 
+/* tutorial */
+
+.tutorial{
+    width: 100vw;
+    height: 200px;
+    background-color: #fffafa;
+}
+
 
 
 
