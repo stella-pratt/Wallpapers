@@ -1,5 +1,5 @@
 let height = window.screen.height
-let width = window.screen.width
+let width = window.screen.widths
 if(height > width) {
     resolution = "Mobile"
 } else if(height > 1080 || width > 1920) {

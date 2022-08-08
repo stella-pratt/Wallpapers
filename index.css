@@ -7,6 +7,7 @@
     color: #111111;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    --autocomplete-show: 100px;
 }
 body{
     background-color: #fffafa;
@@ -207,7 +208,23 @@ body{
 }
 .search_bar_text:focus{
     outline: none;
+    --autocomplete-show: 100px;
 }
+
+.autocomplete{
+    background-color: deeppink;
+    height: var(--autocomplete-show);
+    width: -webkit-calc(60% - 80px);
+    width:    -moz-calc(60% - 80px);
+    width:         calc(60% - 80px);
+    position: absolute;
+    transform: translateY(90px);
+}
+
+
+
+
+
 .submit{
     height: 50px;
     width: 6%;
