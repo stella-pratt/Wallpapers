@@ -7,7 +7,7 @@
     color: #111111;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    --autocomplete-show: 100px;
+    --autocomplete-show: 0px;
 }
 body{
     background-color: #fffafa;
