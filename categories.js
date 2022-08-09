@@ -132,7 +132,6 @@ function close_pop_up() {
     document.body.style.overflowY = "auto"
     window.scrollTo(0, scroll_amount)
     scroll_amount = 0
-
 }
 
 
