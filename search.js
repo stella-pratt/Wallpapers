@@ -162,14 +162,15 @@ let wallpaper_info = [
     "mountains lake water ocean sea hills mountains sun clouds sky reflection sunset orange",
 ]
 let wallpaper_dict = {
-    "scenery":   [4, 5, 6, 7, 8, 9, 10, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119],
-    "abstract":  [1, 2, 3, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60],
-    "light":     [2, 3, 4, 5, 7, 8, 11, 12, 13, 16, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 36, 37, 39, 41, 42, 43, 44, 46, 48, 51, 55, 56, 58, 63, 66, 67, 68, 79, 80, 81, 82, 83, 88, 89, 92, 93, 94, 95, 98, 105, 109, 112, 115, 121],
-    "dark":      [1, 6, 10, 14, 15, 17, 19, 21, 33, 34, 45, 47, 53, 54, 57, 122],
-    "colourful": [2, 7, 8, 9, 11, 12, 13, 16, 17, 18, 20, 24, 28, 34, 40, 45, 48, 49, 50, 52, 55, 58, 59, 60, 64, 65, 70, 71, 87, 91, 101, 103, 106, 107, 108, 118, 120]
+    "scenery":   [4, 5, 6, 7, 8, 9, 10, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 123, 135, 136, 138, 159, 160, 161],
+    "abstract":  [1, 2, 3, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 155, 157, 158],
+    "light":     [2, 3, 4, 5, 7, 8, 11, 12, 13, 16, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 36, 37, 39, 41, 42, 43, 44, 46, 48, 51, 55, 56, 58, 63, 66, 67, 68, 79, 80, 81, 82, 83, 88, 89, 92, 93, 94, 95, 98, 105, 109, 112, 115, 121, 124, 130, 131, 132, 134, 138, 139, 144, 145, 154, 155],
+    "dark":      [1, 6, 10, 14, 15, 17, 19, 21, 33, 34, 45, 47, 53, 54, 57, 122, 126, 127, 128, 129, 140, 141, 142, 143, 147],
+    "colourful": [2, 7, 8, 9, 11, 12, 13, 16, 17, 18, 20, 24, 28, 34, 40, 45, 48, 49, 50, 52, 55, 58, 59, 60, 64, 65, 70, 71, 87, 91, 101, 103, 106, 107, 108, 118, 120, 124, 125, 133, 137, 139, 140, 141, 142, 143, 146, 147, 148, 149, 150, 151, 152, 153, 156, 157, 158, 160, 161]
 }
 
 
+let categories = Object.keys(wallpaper_dict)
 
 let matching_wallpapers = [];
 //get all parameters from the url
@@ -179,30 +180,61 @@ const url_parameters = new URLSearchParams(the_url);
 //get the search terms
 const search_terms = url_parameters.get('search').toLowerCase().split(" ")
 
+document.title = url_parameters.get('search') + " - Wallpapers"
 
 
 
 
 
-for (let i = 0; i < search_terms.length; i++) {
-    for (let j = 0; j < wallpaper_info.length; j++) {
-        if(wallpaper_info[j].includes(search_terms[i])){
-            if (matching_wallpapers.length < 1){
+//infintie loop in heere
+/*
+for (let m = 0; m < categories.length; i++) {
+    if (search_terms[i] === categories[m]) {
+        for (let u = 0; u < wallpaper_dict[search_terms[i]].length; i++) {
+            if (matching_wallpapers.length < 1) {
                 //if the list is empty add the first wallpaper
-                matching_wallpapers.push([1, j+1])
-            } else{
+                matching_wallpapers.push([1, j + 1])
+            } else {
                 //loop through matching wallpapers and check if is already here
                 let modification = false
-                for(let p = 0; p < matching_wallpapers.length; p++){
-                    if(matching_wallpapers[p][1] === j+1){
+                for (let p = 0; p < matching_wallpapers.length; p++) {
+                    if (matching_wallpapers[p][1] === j + 1) {
                         //increase the count if a wallpaper already exists
-                        matching_wallpapers[p][0] ++
+                        matching_wallpapers[p][0]++
                         modification = true
                     }
                 }
-                if (modification === false){
+                if (modification === false) {
                     // if the wallpaper doesnt exist yet add it
-                    matching_wallpapers.push([1, j+1])
+                    matching_wallpapers.push([1, j + 1])
+                }
+            }
+        }
+    }
+}
+*/
+
+
+for (let i = 0; i < search_terms.length; i++) {
+
+    for (let j = 0; j < wallpaper_info.length; j++) {
+        if (wallpaper_info[j].includes(search_terms[i])) {
+            if (matching_wallpapers.length < 1) {
+                //if the list is empty add the first wallpaper
+                matching_wallpapers.push([1, j + 1])
+            } else {
+                //loop through matching wallpapers and check if is already here
+                let modification = false
+                for (let p = 0; p < matching_wallpapers.length; p++) {
+                    if (matching_wallpapers[p][1] === j + 1) {
+                        //increase the count if a wallpaper already exists
+                        matching_wallpapers[p][0]++
+                        modification = true
+                    }
+                }
+                if (modification === false) {
+                    // if the wallpaper doesnt exist yet add it
+                    matching_wallpapers.push([1, j + 1])
                 }
             }
         }
@@ -210,14 +242,11 @@ for (let i = 0; i < search_terms.length; i++) {
 }
 
 
-
-
-
 //no search results
-if (matching_wallpapers.length === 0){
+if (matching_wallpapers.length === 0) {
     no_match = document.getElementById("no_match")
     search_item = url_parameters.get("search")
-    if(search_item.trim().length < 15){
+    if (search_item.trim().length < 15) {
         no_match.innerHTML = "Your search for <b>'" + search_item.trim() + "'</b> didn't match any results"
     } else {
         no_match.innerHTML = "Your search for <b>'" + search_item.substring(0, 15).trim() + "...'</b> didn't match any results"
@@ -227,32 +256,25 @@ if (matching_wallpapers.length === 0){
 }
 
 
-
-
-
-
-
-
-
-
 //randomize the list
 function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
+    let currentIndex = array.length, randomIndex;
 
-  // While there remain elements to shuffle.
-  while (currentIndex !== 0) {
+    // While there remain elements to shuffle.
+    while (currentIndex !== 0) {
 
-    // Pick a remaining element.
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
 
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
-  }
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
 
-  return array;
+    return array;
 }
+
 shuffle(matching_wallpapers)
 
 
@@ -263,18 +285,18 @@ a.sort(sortFunction);
 function sortFunction(a, b) {
     if (a[0] === b[0]) {
         return 0;
-    }
-    else {
+    } else {
         return (a[0] < b[0]) ? -1 : 1;
     }
 }
+
 matching_wallpapers = a.reverse()
 
 
 num_rows = Math.ceil(matching_wallpapers.length / 3)
 
 
-for(let i = num_rows; i > 0; i--) {
+for (let i = num_rows; i > 0; i--) {
     let row = document.createElement("div")
     row.className = "image_row"
     for (let j = 0; j < 3; j++) {
@@ -284,7 +306,7 @@ for(let i = num_rows; i > 0; i--) {
         image_append.className = "main_images"
 
         let image_num = matching_wallpapers[0]
-        matching_wallpapers.splice(0,1)
+        matching_wallpapers.splice(0, 1)
         image_num = image_num[1]
         //make the source for the image
         let image_source = "images/Final%20images/thumbnail/" + image_num + ".jpg"
@@ -369,9 +391,7 @@ function close_pop_up() {
     document.body.style.overflowY = "auto"
     window.scrollTo(0, scroll_amount)
     scroll_amount = 0
-
 }
-
 
 
 
