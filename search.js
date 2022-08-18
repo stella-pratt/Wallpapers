@@ -181,9 +181,19 @@ const url_parameters = new URLSearchParams(the_url);
 //get the search terms
 const search_terms = url_parameters.get('search').toLowerCase().split(" ")
 
+
+
+
 document.title = url_parameters.get('search') + " - Wallpapers"
 
 
+
+let search_box = document.querySelector(".search_bar_text")
+search_box.value = url_parameters.get('search')
+
+search_box.addEventListener('focus', (event) => {
+    search_box.setSelectionRange(0, search_box.value.length)
+})
 
 
 
