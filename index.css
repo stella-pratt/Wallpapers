@@ -211,15 +211,6 @@ body{
     --autocomplete-show: 100px;
 }
 
-.autocomplete{
-    background-color: deeppink;
-    height: var(--autocomplete-show);
-    width: -webkit-calc(60% - 80px);
-    width:    -moz-calc(60% - 80px);
-    width:         calc(60% - 80px);
-    position: absolute;
-    transform: translateY(90px);
-}
 
 
 
