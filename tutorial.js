@@ -13,14 +13,12 @@ document.querySelector(".resolution_text").innerHTML = "Recommended Resolution: 
 
 
 
-
+let os = "windows"
 
 if(navigator.platform.charAt(0) === "M"){
-    document.querySelector(".os").innerHTML = "You are on Mac"
+    os = "mac"
 } else if(navigator.platform.charAt(0) === "i"){
-    document.querySelector(".os").innerHTML = "You are on ios"
+    os = "iphone"
 } else if(navigator.platform.charAt(0) === "L"){
-    document.querySelector(".os").innerHTML = "You are on android"
-} else {
-    document.querySelector(".os").innerHTML = "You are on windows"
+    os = "android"
 }

@@ -487,10 +487,23 @@ b {
     background-color: #fffafa;
 }
 
+.instruction{
+    width: 100%;
+    padding: 5vh 20vw;
+}
 
 
-
-
+.instruction_header{
+    font-weight: 500;
+    font-size: 24px;
+}
+.instruction_image{
+    width: 60vw;
+}
+.instruction_text{
+    font-size: 18px;
+    padding: 3vh 0;
+}
 
 
 
