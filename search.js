@@ -1,5 +1,5 @@
 let wallpaper_info = [
-    "black deer illuminated glowing lime green dark antlers moose elk",
+    "black deer illuminated glowing lime green  antlers moose elk",
     "sun glowing spikey spots yellow red orange white balls",
     "green turquoise spots see-through blue white dotty spotty",
     "mountains sunset trees mist cliffs clouds yellow shadow",
@@ -31,12 +31,12 @@ let wallpaper_info = [
     "mountain snow cliff rock boulder trees glacier",
     "mountain valleys hills grass fog mist clouds rocky scree",
     "skiing snow ice trees mountain range glacier ridge",
-    "hill grass trees dark sunset glow mountain night",
+    "hill grass trees  sunset glow mountain night",
     "hill dirt rocks slope sunset sunrise glow stony",
     "hill grass glow sunset dusk mountain top",
     "day hill rocks dirt grass green peak boulder pile",
     "beach marshes estuary seaweed sand rocks water ocean sea",
-    "water sun grass edge shoreline estuary yellow dark",
+    "water sun grass edge shoreline estuary yellow ",
     "snow water lake mountain hills grass reflection sky",
     "sunset snow hills water reflection grass land",
     "fjord water reflection snow grass sky horizon",
@@ -51,7 +51,7 @@ let wallpaper_info = [
     "shards blue pink purple gradient shattered",
     "tree cherry blue pink leaves wood",
     "green dots black grid circles gradient",
-    "lightbulb glowing dark wire yellow black",
+    "lightbulb glowing wire yellow black",
     "black stars grey silver gradient",
     "rose flower colour gradient red orange green petals pink",
     "kiwifruit green seeds pink brown fruit slice",
@@ -216,7 +216,7 @@ for (let m = 0; m < categories.length; i++) {
                     }
                 }
                 if (modification === false) {
-                    // if the wallpaper doesnt exist yet add it
+                    // if the wallpaper doesn't exist yet add it
                     matching_wallpapers.push([1, j + 1])
                 }
             }
@@ -244,7 +244,7 @@ for (let i = 0; i < search_terms.length; i++) {
                     }
                 }
                 if (modification === false) {
-                    // if the wallpaper doesnt exist yet add it
+                    // if the wallpaper doesn't exist yet add it
                     matching_wallpapers.push([1, j + 1])
                 }
             }
