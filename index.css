@@ -231,7 +231,9 @@ body{
 .submit img{
     width: 100%;
 }
-
+.category_name a{
+    text-decoration: none;
+}
 
 .category_previews{
     display: flex;
