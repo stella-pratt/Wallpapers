@@ -5,6 +5,15 @@ let wallpaper_dict = {
     "dark":      [1, 6, 10, 14, 15, 17, 19, 21, 33, 34, 45, 47, 53, 54, 57, 122, 126, 127, 128, 129, 140, 141, 142, 143, 147, 162],
     "colourful": [2, 7, 8, 9, 11, 12, 13, 16, 17, 18, 20, 24, 28, 34, 40, 45, 48, 49, 50, 52, 55, 58, 59, 60, 64, 65, 70, 71, 87, 91, 101, 103, 106, 107, 108, 118, 120, 124, 125, 133, 137, 139, 140, 141, 142, 143, 146, 147, 148, 149, 150, 151, 152, 153, 156, 157, 158, 160, 161]
 }
+num_wallpapers = 163
+
+
+//set the carousel wallpapers
+let slide_papers = document.querySelectorAll(".carousel_paper")
+slide_papers.forEach((slide_paper) =>{
+    slide_paper.src = "images/Final%20images/FHD/" + ((Math.floor(Math.random() * 162))+1) + ".jpg"
+})
+
 
 
 
@@ -13,7 +22,7 @@ let wallpaper_dict = {
 let homepage_category = document.querySelectorAll(".homepage_category")
 
 homepage_category.forEach((category_parent) =>{
-    let category_name = category_parent.querySelector(".category_name")
+    let category_name = category_parent.querySelector(".category_name").getElementsByTagName("a")[0];
     let image_wrapper = category_parent.querySelectorAll(".image_wrapper")
     let category = category_name.innerHTML.toLowerCase()
     image_wrapper.forEach((wrapper) =>{
