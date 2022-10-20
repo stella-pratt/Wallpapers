@@ -179,13 +179,20 @@ document.addEventListener("keydown", function (pressed_key){
 top_btn = document.querySelector(".back2top");
 top_arrow = top_btn.getElementsByTagName("img")[0];
 
+function open_scroll() {
+    top_btn.style.height = "50px"
+    top_arrow.style.height = "23px"
+}
+function close_scroll() {
+    top_btn.style.height = "0"
+    top_arrow.style.height = "0"
+}
+
 window.addEventListener("scroll", function (){
     if (window.scrollY === 0){
-        top_btn.style.height = "0"
-        top_arrow.style.height = "0"
+        close_scroll()
     } else {
-        top_btn.style.height = "50px"
-        top_arrow.style.height = "23px"
+        open_scroll()
     }
 })
 

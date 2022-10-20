@@ -66,7 +66,7 @@ const url_parameters = new URLSearchParams(the_url);
 const page_category = url_parameters.get('category').toLowerCase()
 
 //change title of page to category
-document.title = page_category.charAt(0).toUpperCase() + page_category.slice(1)
+document.title = page_category.charAt(0).toUpperCase() + page_category.slice(1) + " - Wallpapers"
 
 //calculate the number of rows needed
 let num_rows = Math.ceil((wallpaper_dict[page_category].length)/3)
@@ -74,7 +74,25 @@ load_rows()
 
 
 
+top_btn = document.querySelector(".back2top");
+top_arrow = top_btn.getElementsByTagName("img")[0];
 
+function open_scroll() {
+    top_btn.style.height = "50px"
+    top_arrow.style.height = "23px"
+}
+function close_scroll() {
+    top_btn.style.height = "0"
+    top_arrow.style.height = "0"
+}
+
+window.addEventListener("scroll", function (){
+    if (window.scrollY === 0){
+        close_scroll()
+    } else {
+        open_scroll()
+    }
+})
 
 
 
