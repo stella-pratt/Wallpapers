@@ -14,7 +14,7 @@ body{
 }
 .header{
     background-color: #19b84e;
-    height: 100px;
+    height: 10vh;
     width: 100%;
 }
 .navspread{
@@ -44,7 +44,7 @@ body{
     text-align: center;
     text-decoration: none;
     width: 50%;
-    height: 100px;
+    height: 10vh;
     font-family: 'Work Sans', sans-serif;
     font-weight: 500;
     font-size: 25px;
@@ -76,7 +76,7 @@ body{
     min-width: 50%;
     z-index: 100;
     overflow: visible;
-    top: 100px;
+    top: 10vh;
     animation: growDown 0.5s ease-in-out forwards;
     transform-origin: top center;
     cursor: pointer;
@@ -307,7 +307,7 @@ body{
 
 .footer{
     background-color: #19b84e;
-    height: 200px;
+    height: 20vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -482,18 +482,14 @@ b {
 
 /* tutorial */
 
-.tutorial{
-    width: 100vw;
-    height: 200px;
+.tut_main{
+    width: 100%;
     background-color: #fffafa;
 }
-
 .instruction{
     width: 100%;
-    padding: 5vh 20vw;
+    padding: 5vh 20%;
 }
-
-
 .instruction_header{
     font-weight: 500;
     font-size: 24px;
@@ -505,6 +501,18 @@ b {
     font-size: 18px;
     padding: 3vh 0;
 }
+.os_selector{
+    padding: 5vh 20%;
+}
+.os_dropdown{
+    width: 15%;
+    aspect-ratio: 5 / 1;
+    background-color: #fffafa;
+    border: #19b84e 2px solid;
+    border-radius: 1.2vw;
+
+}
+
 
 
 .back2top{
@@ -529,7 +537,6 @@ b {
     width: 38px;
     height: 0;
 }
-
 
 
 

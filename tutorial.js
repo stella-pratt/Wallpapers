@@ -13,22 +13,6 @@ document.querySelector(".resolution_text").innerHTML = "Recommended Resolution: 
 
 
 
-let os = "Windows"
-
-if(navigator.platform.charAt(0) === "M"){
-    os = "MacOS"
-} else if(navigator.platform.charAt(0) === "i"){
-    os = "iOS"
-} else if(navigator.platform.charAt(0) === "L"){
-    os = "Android"
-}
-
-
-
-
-
-
-
 top_btn = document.querySelector(".back2top");
 top_arrow = top_btn.getElementsByTagName("img")[0];
 
@@ -48,3 +32,27 @@ window.addEventListener("scroll", function (){
         open_scroll()
     }
 })
+
+
+
+
+
+let os = "Windows"
+
+if(navigator.platform.charAt(0) === "M"){
+    os = "MacOS"
+} else if(navigator.platform.charAt(0) === "i"){
+    os = "iOS"
+} else if(navigator.platform.charAt(0) === "L"){
+    os = "Android"
+}
+
+
+
+document.querySelector(".detected_os").innerHTML = "Your os was detected as " + os + ". To change this, click the dropdown below."
+
+
+
+
+
+
