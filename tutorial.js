@@ -13,15 +13,21 @@ document.querySelector(".resolution_text").innerHTML = "Recommended Resolution: 
 
 
 
-let os = "windows"
+let os = "Windows"
 
 if(navigator.platform.charAt(0) === "M"){
-    os = "mac"
+    os = "MacOS"
 } else if(navigator.platform.charAt(0) === "i"){
-    os = "iphone"
+    os = "iOS"
 } else if(navigator.platform.charAt(0) === "L"){
-    os = "android"
+    os = "Android"
 }
+
+
+
+
+
+
 
 top_btn = document.querySelector(".back2top");
 top_arrow = top_btn.getElementsByTagName("img")[0];

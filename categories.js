@@ -27,7 +27,7 @@ function load_rows() {
                 //get random image and remove it from the list
                 let image_num = wallpaper_dict[page_category][Math.floor(Math.random()*wallpaper_dict[page_category].length)]
                 wallpaper_dict[page_category].splice(wallpaper_dict[page_category].indexOf(image_num), 1)
-
+                console.log(image_num)
                 //make the source for the image
                 let image_source = "images/Final%20images/thumbnail/" + image_num + ".jpg"
                 if (!image_source.includes("undefined")) {

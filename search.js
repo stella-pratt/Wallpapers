@@ -173,6 +173,8 @@ let wallpaper_dict = {
 
 let categories = Object.keys(wallpaper_dict)
 
+
+
 let matching_wallpapers = [];
 //get all parameters from the url
 const the_url = window.location.search;
@@ -183,33 +185,33 @@ const search_terms = url_parameters.get('search').toLowerCase().split(" ")
 
 
 
-
+//set title to include the search terms
 document.title = url_parameters.get('search') + " - Wallpapers"
-
-
-
+//set the search box to contain previous search terms
 let search_box = document.querySelector(".search_bar_text")
 search_box.value = url_parameters.get('search')
-
+//highlight text in search box when clicked
 search_box.addEventListener('focus', (event) => {
     search_box.setSelectionRange(0, search_box.value.length)
 })
 
 
 
-//infintie loop in heere
-/*
-for (let m = 0; m < categories.length; i++) {
-    if (search_terms[i] === categories[m]) {
-        for (let u = 0; u < wallpaper_dict[search_terms[i]].length; i++) {
-            if (matching_wallpapers.length < 1) {
-                //if the list is empty add the first wallpaper
-                matching_wallpapers.push([1, j + 1])
-            } else {
+
+
+// [num matches][wallpaper id]
+
+
+//this will work if only one category is in the search terms
+
+for ( let s = 0; s < search_terms.length; s++ ) {
+    for ( let h = 0; h < categories.length; h++ ) {
+        if (search_terms[s] === categories[h]) {
+            for ( let i = 0; i < wallpaper_dict[categories[h]].length; i++ ) {
                 //loop through matching wallpapers and check if is already here
                 let modification = false
                 for (let p = 0; p < matching_wallpapers.length; p++) {
-                    if (matching_wallpapers[p][1] === j + 1) {
+                    if (matching_wallpapers[p][1] === wallpaper_dict[categories[h]][i]) {
                         //increase the count if a wallpaper already exists
                         matching_wallpapers[p][0]++
                         modification = true
@@ -217,36 +219,30 @@ for (let m = 0; m < categories.length; i++) {
                 }
                 if (modification === false) {
                     // if the wallpaper doesn't exist yet add it
-                    matching_wallpapers.push([1, j + 1])
+                    matching_wallpapers.push([1, wallpaper_dict[categories[h]][i]])
                 }
             }
         }
     }
 }
-*/
+
 
 
 for (let i = 0; i < search_terms.length; i++) {
-
     for (let j = 0; j < wallpaper_info.length; j++) {
         if (wallpaper_info[j].includes(search_terms[i])) {
-            if (matching_wallpapers.length < 1) {
-                //if the list is empty add the first wallpaper
+            //loop through matching wallpapers and check if is already here
+            let modification = false
+            for (let p = 0; p < matching_wallpapers.length; p++) {
+                if (matching_wallpapers[p][1] === j + 1) {
+                    //increase the count if a wallpaper already exists
+                    matching_wallpapers[p][0]++
+                    modification = true
+                }
+            }
+            if (modification === false) {
+                // if the wallpaper doesn't exist yet add it
                 matching_wallpapers.push([1, j + 1])
-            } else {
-                //loop through matching wallpapers and check if is already here
-                let modification = false
-                for (let p = 0; p < matching_wallpapers.length; p++) {
-                    if (matching_wallpapers[p][1] === j + 1) {
-                        //increase the count if a wallpaper already exists
-                        matching_wallpapers[p][0]++
-                        modification = true
-                    }
-                }
-                if (modification === false) {
-                    // if the wallpaper doesn't exist yet add it
-                    matching_wallpapers.push([1, j + 1])
-                }
             }
         }
     }
@@ -265,6 +261,7 @@ if (matching_wallpapers.length === 0) {
 } else {
     document.querySelector(".no_results").remove()
 }
+
 
 
 //randomize the list
@@ -289,6 +286,7 @@ function shuffle(array) {
 shuffle(matching_wallpapers)
 
 
+
 //sort list by number of matches
 const a = matching_wallpapers;
 a.sort(sortFunction);
@@ -303,10 +301,76 @@ function sortFunction(a, b) {
 
 matching_wallpapers = a.reverse()
 
+while (matching_wallpapers.length%3 !== 0) {
+    matching_wallpapers.push([0, undefined])
+}
 
-num_rows = Math.ceil(matching_wallpapers.length / 3)
 
 
+
+
+//make function for loading four rows
+function load_rows() {
+    if(num_rows >= 1){
+        let load_loop = 4
+        if(num_rows <= 4){
+            load_loop = num_rows
+        }
+        for(let i = 0; i < load_loop; i++){
+            let row = document.createElement("div")
+            row.className = "image_row"
+            for (let j = 0; j < 3; j++) {
+                let image_box = document.createElement("div")
+                image_box.className = "image_box"
+
+                let image_append = document.createElement("img")
+                image_append.className = "main_images"
+                //get random image and remove it from the list
+                let image_num = matching_wallpapers[0][1]
+                matching_wallpapers.splice(0, 1)
+
+                //make the source for the image
+                let image_source = "images/Final%20images/thumbnail/" + image_num + ".jpg"
+                if (!image_source.includes("undefined")) {
+                    image_append.src = image_source
+                    image_box.appendChild(image_append)
+                    let download = document.createElement("div")
+                    download.className = "download"
+                    let download_image = document.createElement("img")
+                    download_image.src = "images/download.png"
+                    download_image.alt = "download"
+                    download_image.className = "download_image"
+                    download.appendChild(download_image)
+
+                    image_box.appendChild(download)
+                }
+                row.appendChild(image_box)
+            }
+            document.querySelector(".categories_main").appendChild(row)
+        }
+        num_rows -= 4
+        if(num_rows <= 0){
+            document.querySelector(".load_more").remove()
+        }
+    }
+    // refresh download function here
+}
+
+
+
+
+
+
+let num_rows = Math.ceil(matching_wallpapers.length / 3)
+load_rows()
+
+
+
+
+
+
+
+/*
 for (let i = num_rows; i > 0; i--) {
     let row = document.createElement("div")
     row.className = "image_row"
@@ -341,7 +405,7 @@ for (let i = num_rows; i > 0; i--) {
     }
     document.querySelector(".categories_main").appendChild(row)
 }
-
+*/
 
 
 
