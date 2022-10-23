@@ -27,7 +27,6 @@ function load_rows() {
                 //get random image and remove it from the list
                 let image_num = wallpaper_dict[page_category][Math.floor(Math.random()*wallpaper_dict[page_category].length)]
                 wallpaper_dict[page_category].splice(wallpaper_dict[page_category].indexOf(image_num), 1)
-                console.log(image_num)
                 //make the source for the image
                 let image_source = "images/Final%20images/thumbnail/" + image_num + ".jpg"
                 if (!image_source.includes("undefined")) {
@@ -61,16 +60,35 @@ function load_rows() {
 //get all parameters from the url
 const the_url = window.location.search;
 const url_parameters = new URLSearchParams(the_url);
+if (url_parameters.has("category")) {
+    document.querySelector(".category_previews").remove()
+    //get the current page's category
+    page_category = url_parameters.get('category').toLowerCase()
 
-//get the current page's category
-const page_category = url_parameters.get('category').toLowerCase()
+    //change title of page to category
+    document.title = page_category.charAt(0).toUpperCase() + page_category.slice(1) + " - Wallpapers"
 
-//change title of page to category
-document.title = page_category.charAt(0).toUpperCase() + page_category.slice(1) + " - Wallpapers"
+    //calculate the number of rows needed
+    num_rows = Math.ceil((wallpaper_dict[page_category].length)/3)
+    load_rows()
+} else {
+    let homepage_category = document.querySelectorAll(".homepage_category")
 
-//calculate the number of rows needed
-let num_rows = Math.ceil((wallpaper_dict[page_category].length)/3)
-load_rows()
+    homepage_category.forEach((category_parent) =>{
+        let category_name = category_parent.querySelector(".category_name").getElementsByTagName("a")[0];
+        let image_wrapper = category_parent.querySelectorAll(".image_wrapper")
+        let category = category_name.innerHTML.toLowerCase()
+        image_wrapper.forEach((wrapper) =>{
+            let real_image = wrapper.querySelector(".page_image")
+            let insert_image = wallpaper_dict[category][Math.floor(Math.random()*wallpaper_dict[category].length)]
+            wallpaper_dict[category].splice(wallpaper_dict[category].indexOf(insert_image), 1)
+            real_image.src = "images/Final%20images/thumbnail/" + insert_image + ".jpg"
+        })
+    })
+}
+
+
+
 
 
 

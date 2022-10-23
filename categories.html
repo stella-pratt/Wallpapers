@@ -10,7 +10,7 @@
 <body>
     <div class="header">
         <div class="topnav">
-            <div class="menu_item">Categories
+            <a class="menu_item" href="categories.html">Categories
                 <ul class="dropdown">
                     <li>
                         <form action="categories.html" method="GET">
@@ -38,9 +38,8 @@
                         </form>
                     </li>
                 </ul>
-            </div>
-
-            <a class="menu_item" href="tutorial.html" id="tutorial_cur">Tutorial</a>
+            </a>
+            <a class="menu_item" href="tutorial.html">Tutorial</a>
         </div>
         <div class="navspread">
             <a href="index.html"><img src="images/logo.png" alt="logo" class="logo"></a>
@@ -57,6 +56,95 @@
         </form>
     </div>
 
+    <div class="category_previews">
+        <div class="homepage_category">
+            <h2 class="category_name"><a href="categories.html?category=Scenery">Scenery</a></h2>
+            <div class="category_images">
+                <div class="image_wrapper">
+                    <img class="page_image" src="">
+                    <div class="download"><img src="images/download.png" class="download_image"></div>
+                </div>
+                <div class="image_wrapper">
+                    <img class="page_image" src="">
+                    <div class="download"><img src="images/download.png" class="download_image"></div>
+                </div>
+                <div class="image_wrapper">
+                    <img class="page_image" src="">
+                    <div class="download"><img src="images/download.png" class="download_image"></div>
+                </div>
+            </div>
+        </div>
+        <div class="homepage_category">
+            <h2 class="category_name"><a href="categories.html?category=Abstract">Abstract</a></h2>
+            <div class="category_images">
+                <div class="image_wrapper">
+                    <img class="page_image" src="">
+                    <div class="download"><img src="images/download.png" class="download_image"></div>
+                </div>
+                <div class="image_wrapper">
+                    <img class="page_image" src="">
+                    <div class="download"><img src="images/download.png" class="download_image"></div>
+                </div>
+                <div class="image_wrapper">
+                    <img class="page_image" src="">
+                    <div class="download"><img src="images/download.png" class="download_image"></div>
+                </div>
+            </div>
+        </div>
+        <div class="homepage_category">
+            <h2 class="category_name"><a href="categories.html?category=Light">Light</a></h2>
+            <div class="category_images">
+                <div class="image_wrapper">
+                    <img class="page_image" src="">
+                    <div class="download"><img src="images/download.png" class="download_image"></div>
+                </div>
+                <div class="image_wrapper">
+                    <img class="page_image" src="">
+                    <div class="download"><img src="images/download.png" class="download_image"></div>
+                </div>
+                <div class="image_wrapper">
+                    <img class="page_image" src="">
+                    <div class="download"><img src="images/download.png" class="download_image"></div>
+                </div>
+            </div>
+        </div>
+        <div class="homepage_category">
+            <h2 class="category_name"><a href="categories.html?category=Dark">Dark</a></h2>
+            <div class="category_images">
+                <div class="image_wrapper">
+                    <img class="page_image" src="">
+                    <div class="download"><img src="images/download.png" class="download_image"></div>
+                </div>
+                <div class="image_wrapper">
+                    <img class="page_image" src="">
+                    <div class="download"><img src="images/download.png" class="download_image"></div>
+                </div>
+                <div class="image_wrapper">
+                    <img class="page_image" src="">
+                    <div class="download"><img src="images/download.png" class="download_image"></div>
+                </div>
+            </div>
+        </div>
+        <div class="homepage_category">
+            <h2 class="category_name"><a href="categories.html?category=Colourful">Colourful</a></h2>
+            <div class="category_images">
+                <div class="image_wrapper">
+                    <img class="page_image" src="">
+                    <div class="download"><img src="images/download.png" class="download_image"></div>
+                </div>
+                <div class="image_wrapper">
+                    <img class="page_image" src="">
+                    <div class="download"><img src="images/download.png" class="download_image"></div>
+                </div>
+                <div class="image_wrapper">
+                    <img class="page_image" src="">
+                    <div class="download"><img src="images/download.png" class="download_image"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="categories_main"></div>
     <div class="load_more">
         <div class="load_button" onclick="load_rows()">Load More</div>
@@ -67,16 +155,16 @@
     </div>
 
     <div class="footer">
-        <img src="images/logo.png" alt="logo" class="footer_logo">
+        <a href="index.html"><img src="images/logo.png" alt="logo" class="footer_logo"></a>
         <div class="footer_menus">
             <ul>
                 <li class="footer_menu_head">Site Map:</li>
                 <li><br></li>
-                <li>Home</li>
+                <li><a href="index.html">Home</a></li>
                 <li><br></li>
-                <li>Categories</li>
+                <li><a href="categories.html">Categories</a></li>
                 <li><br></li>
-                <li>Tutorial</li>
+                <li><a href="tutorial.html">Tutorial</a></li>
             </ul>
         </div>
         <div class="footer_menus" id="contact">
