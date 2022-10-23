@@ -85,6 +85,7 @@ if (url_parameters.has("category")) {
             real_image.src = "images/Final%20images/thumbnail/" + insert_image + ".jpg"
         })
     })
+    document.querySelector(".load_more").remove()
 }
 
 
