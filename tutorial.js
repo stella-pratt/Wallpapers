@@ -33,21 +33,25 @@ window.addEventListener("scroll", function (){
 
 
 
+let dropdown = document.querySelector(".os_dropdown")
+let detect_font = window.getComputedStyle(document.querySelector(".detected_os")).fontSize
+dropdown.style.fontSize = detect_font
 
 
 let os = "Windows"
 
 if(navigator.platform.charAt(0) === "M"){
-    os = "MacOS"
+    os = "macOS"
 } else if(navigator.platform.charAt(0) === "i"){
     os = "iOS"
 } else if(navigator.platform.charAt(0) === "L"){
     os = "Android"
 }
 
+dropdown.value = os
 
 
-document.querySelector(".detected_os").innerHTML = "Your os was detected as " + os + ". To change this, click the dropdown below."
+
 
 
 

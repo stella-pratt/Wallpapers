@@ -505,15 +505,16 @@ b {
     padding: 3vh 0;
 }
 .os_selector{
-    padding: 5vh 20%;
+    padding: 5vh 20% 0 20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 .os_dropdown{
-    width: 15%;
-    aspect-ratio: 5 / 1;
     background-color: #fffafa;
     border: #19b84e 2px solid;
     border-radius: 1.2vw;
-
+    margin-left: 3px;
 }
 
 
