@@ -353,7 +353,6 @@ body{
 
 .pop_up{
     position: fixed;
-    height: 80vh;
     z-index: 300;
     width: 60vw;
     background-color: #fffafa;
@@ -361,7 +360,7 @@ body{
     top: 0;
     left: 0;
     border-radius: 3vh;
-    padding:  0 1.5vh 1.5vh 1.5vh;
+    padding: 1.5vh;
     display: none;
     transition: 0.5s;
     flex-direction: column-reverse;
@@ -369,7 +368,6 @@ body{
 }
 .disp_image{
     width: 100%;
-    bottom: 0;
 }
 
 
@@ -380,17 +378,15 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 1.5vh;
 }
 
 .close_pop{
     cursor: pointer;
     height: 60%;
     transition: 0.3s;
-    margin-right: 3%;
 }
-.close_pop:hover{
-    height: 65%;
-}
+
 .download_options{
     height: 100%;
     width: 60%;
