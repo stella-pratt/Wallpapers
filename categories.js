@@ -77,6 +77,7 @@ if (url_parameters.has("category")) {
     homepage_category.forEach((category_parent) =>{
         let category_name = category_parent.querySelector(".category_name").getElementsByTagName("a")[0];
         let image_wrapper = category_parent.querySelectorAll(".image_wrapper")
+
         let category = category_name.innerHTML.toLowerCase()
         image_wrapper.forEach((wrapper) =>{
             let real_image = wrapper.querySelector(".page_image")
@@ -87,7 +88,31 @@ if (url_parameters.has("category")) {
     })
     document.querySelector(".load_more").remove()
     document.querySelector(".categories_main").remove()
-
+    document.querySelectorAll(".download").forEach(button_clicked => {
+        button_clicked.addEventListener("click", function (){
+            const pop_up = document.querySelector(".pop_up")
+            pop_up.style.display = "flex";
+            document.querySelector(".background_shade").style.display = "block";
+            scroll_amount += document.documentElement.scrollTop
+            document.body.style.top = -(scroll_amount) + "px"
+            document.body.style.position = "fixed"
+            document.body.style.overflowY = "scroll"
+            pop_up_open = true
+            let parent_image = button_clicked.closest(".image_wrapper")
+            parent_image = parent_image.querySelector(".page_image")
+            document.querySelector(".disp_image").src = parent_image.src
+            document.querySelector("#fourK").href = parent_image.src.replace("/thumbnail/", "/4K/")
+            document.querySelector("#fhd").href = parent_image.src.replace("/thumbnail/", "/FHD/")
+            document.querySelector("#mobile").href = parent_image.src.replace("/thumbnail/", "/mobile/")
+        })
+    })
+    let close_button = document.querySelector(".close_pop")
+    close_button.addEventListener("click", close_pop_up)
+    document.addEventListener("keydown", function (pressed_key){
+        if(pop_up_open === true && pressed_key.code === "Escape"){
+            close_pop_up()
+        }
+    })
 }
 
 
@@ -176,16 +201,3 @@ function close_pop_up() {
     window.scrollTo(0, scroll_amount)
     scroll_amount = 0
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

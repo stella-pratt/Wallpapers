@@ -354,7 +354,7 @@ function load_rows() {
             document.querySelector(".load_more").remove()
         }
     }
-    // refresh download function here
+    refresh_download()
 }
 
 
@@ -394,31 +394,33 @@ document.getElementById("resolution_text").innerHTML = "Recommended Resolution: 
 let scroll_amount = 0
 let pop_up_open = false
 
-document.querySelectorAll(".download").forEach(button_clicked => {
-    button_clicked.addEventListener("click", function (){
-        const pop_up = document.querySelector(".pop_up")
-        pop_up.style.display = "flex";
-        document.querySelector(".background_shade").style.display = "block";
-        scroll_amount += document.documentElement.scrollTop
-        document.body.style.top = -(scroll_amount) + "px"
-        document.body.style.position = "fixed"
-        document.body.style.overflowY = "scroll"
-        pop_up_open = true
-        let parent_image = button_clicked.closest(".image_box")
-        parent_image = parent_image.querySelector(".main_images")
-        document.querySelector(".disp_image").src = parent_image.src
-        document.querySelector("#fourK").href = parent_image.src.replace("/thumbnail/", "/4K/")
-        document.querySelector("#fhd").href = parent_image.src.replace("/thumbnail/", "/FHD/")
-        document.querySelector("#mobile").href = parent_image.src.replace("/thumbnail/", "/mobile/")
+function refresh_download() {
+    document.querySelectorAll(".download").forEach(button_clicked => {
+        button_clicked.addEventListener("click", function (){
+            const pop_up = document.querySelector(".pop_up")
+            pop_up.style.display = "flex";
+            document.querySelector(".background_shade").style.display = "block";
+            scroll_amount += document.documentElement.scrollTop
+            document.body.style.top = -(scroll_amount) + "px"
+            document.body.style.position = "fixed"
+            document.body.style.overflowY = "scroll"
+            pop_up_open = true
+            let parent_image = button_clicked.closest(".image_box")
+            parent_image = parent_image.querySelector(".main_images")
+            document.querySelector(".disp_image").src = parent_image.src
+            document.querySelector("#fourK").href = parent_image.src.replace("/thumbnail/", "/4K/")
+            document.querySelector("#fhd").href = parent_image.src.replace("/thumbnail/", "/FHD/")
+            document.querySelector("#mobile").href = parent_image.src.replace("/thumbnail/", "/mobile/")
+        })
     })
-})
-let close_button = document.querySelector(".close_pop")
-close_button.addEventListener("click", close_pop_up)
-document.addEventListener("keydown", function (pressed_key){
-    if(pop_up_open === true && pressed_key.code === "Escape"){
-        close_pop_up()
-    }
-})
+    let close_button = document.querySelector(".close_pop")
+    close_button.addEventListener("click", close_pop_up)
+    document.addEventListener("keydown", function (pressed_key){
+        if(pop_up_open === true && pressed_key.code === "Escape"){
+            close_pop_up()
+        }
+    })
+}
 function close_pop_up() {
     pop_up_open = false
     const pop_up = document.querySelector(".pop_up")
