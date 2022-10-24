@@ -493,12 +493,21 @@ b {
     width: 100%;
     padding: 5vh 20%;
 }
+.instruction_mobile{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 .instruction_header{
     font-weight: 500;
     font-size: 24px;
 }
 .instruction_image{
-    width: 60vw;
+    width: 100%;
+}
+.instruction_image_mobile{
+    width: 25%;
+    margin: 0 37.5%;
 }
 .instruction_text{
     font-size: 18px;

@@ -54,7 +54,7 @@
     <div class="os_selector">
         <p class="detected_os">Your os was detected as</p>
         <form>
-            <select class="os_dropdown">
+            <select class="os_dropdown" onchange="change_os()">
                 <option>Windows</option>
                 <option>macOS</option>
                 <option>Android</option>
@@ -63,15 +63,58 @@
         </form>
     </div>
     <div class="tut_main">
-        <div class="instruction">
-            <h3 class="instruction_header">1. Download a wallpaper</h3>
-            <p class="instruction_text">Find your desired wallpaper then click the green download button in the bottom right of the image. Then simply choose the size you want. If you are unsure what size you need have a look at the navigation bar to see the recommended resolution for your device.</p>
-            <img src="images/tutorial/step1.PNG" class="instruction_image">
+        <div class="Windows os_instruction">
+            <div class="instruction">
+                <h3 class="instruction_header">1. Download a wallpaper</h3>
+                <p class="instruction_text">Find your desired wallpaper then click the green download button in the bottom right of the image. Then simply choose the size you want. If you are unsure what size you need have a look at the navigation bar to see the recommended resolution for your device.</p>
+                <img src="images/tutorial/step1.PNG" class="instruction_image">
+            </div>
+            <div class="instruction">
+                <h3 class="instruction_header">2. Install your wallpaper</h3>
+                <p class="instruction_text">Now locate your downloaded wallpaper and right-click on the file. If you are using a trackpad, click with two fingers. With the context menu open, locate and click the "Set as desktop background" option. Now your desktop has a fresh look!</p>
+                <img src="images/tutorial/stepwindows.PNG" class="instruction_image">
+            </div>
         </div>
-        <div class="instruction">
-            <h3 class="instruction_header">2. Install your wallpaper</h3>
-            <p class="instruction_text">Now locate your downloaded wallpaper and right-click on the file. If you are using a trackpad, click with two fingers. With the context menu open, locate and click the "Set as desktop background" option. Now your desktop has a fresh look!</p>
-            <img src="images/tutorial/stepwindows.PNG" class="instruction_image">
+        <div class="macOS os_instruction">
+            <div class="instruction">
+                <h3 class="instruction_header">1. Download a wallpaper</h3>
+                <p class="instruction_text">Find your desired wallpaper then click the green download button in the bottom right of the image. Then simply choose the size you want. If you are unsure what size you need have a look at the navigation bar to see the recommended resolution for your device.</p>
+                <img src="images/tutorial/step1.PNG" class="instruction_image">
+            </div>
+        </div>
+        <div class="iOS os_instruction">
+            <div class="instruction">
+                <h3 class="instruction_header">1. Download a wallpaper</h3>
+                <p class="instruction_text">Find your desired wallpaper then click the green download button in the bottom right of the image. Then simply choose the size you want. If you are unsure what size you need have a look at the navigation bar to see the recommended resolution for your device.</p>
+                <img src="images/tutorial/step1.PNG" class="instruction_image">
+            </div>
+            <div class="instruction">
+                <h3 class="instruction_header">2. Locate your wallpaper</h3>
+                <p class="instruction_text">Now locate your downloaded wallpaper in the photos app and tap the share button. You may need to swipe upwards to see this menu</p>
+                <img src="images/tutorial/step1ios.jpg" class="instruction_image_mobile">
+            </div>
+            <div class="instruction">
+                <h3 class="instruction_header">3. Install your wallpaper</h3>
+                <p class="instruction_text" >Now tap the "Use as Wallpaper" button. You then have the option to adjust the positioning. Now your homepage has a fresh look!</p>
+                <img src="images/tutorial/step2ios.jpg" class="instruction_image_mobile">
+            </div>
+        </div>
+        <div class="Android os_instruction">
+            <div class="instruction">
+                <h3 class="instruction_header">1. Download a wallpaper</h3>
+                <p class="instruction_text">Find your desired wallpaper then click the green download button in the bottom right of the image. Then simply choose the size you want. If you are unsure what size you need have a look at the navigation bar to see the recommended resolution for your device.</p>
+                <img src="images/tutorial/step1.PNG" class="instruction_image">
+            </div>
+            <div class="instruction">
+                <h3 class="instruction_header">2. Locate your wallpaper</h3>
+                <p class="instruction_text">Now locate your downloaded wallpaper in the gallery app and tap the more button.</p>
+                <img src="images/tutorial/step1and.jpg" class="instruction_image_mobile">
+            </div>
+            <div class="instruction">
+                <h3 class="instruction_header">3. Install your wallpaper</h3>
+                <p class="instruction_text" >Now tap the "Set as wallpaper" button. You then have the option to adjust the positioning. Now your homepage has a fresh look!</p>
+                <img src="images/tutorial/step2and.jpg" class="instruction_image_mobile">
+            </div>
         </div>
     </div>
 

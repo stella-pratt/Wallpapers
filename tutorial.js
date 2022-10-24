@@ -50,7 +50,18 @@ if(navigator.platform.charAt(0) === "M"){
 
 dropdown.value = os
 
+function change_os() {
+    os = dropdown.value
+    document.querySelectorAll(".os_instruction").forEach(os_instruction => {
+        if (os_instruction.classList[0] === os){
+            os_instruction.style.display = "block"
+        } else {
+            os_instruction.style.display = "none"
+        }
+    })
+}
 
+change_os()
 
 
 
