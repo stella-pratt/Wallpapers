@@ -258,6 +258,7 @@ if (matching_wallpapers.length === 0) {
     } else {
         no_match.innerHTML = "Your search for <b>'" + search_item.substring(0, 15).trim() + "...'</b> didn't match any results"
     }
+    document.querySelector(".load_more").remove()
 } else {
     document.querySelector(".no_results").remove()
 }
@@ -370,45 +371,6 @@ load_rows()
 
 
 
-/*
-for (let i = num_rows; i > 0; i--) {
-    let row = document.createElement("div")
-    row.className = "image_row"
-    for (let j = 0; j < 3; j++) {
-        let image_box = document.createElement("div")
-        image_box.className = "image_box"
-        let image_append = document.createElement("img")
-        image_append.className = "main_images"
-
-        let image_num = matching_wallpapers[0]
-        matching_wallpapers.splice(0, 1)
-        image_num = image_num[1]
-        //make the source for the image
-        let image_source = "images/Final%20images/thumbnail/" + image_num + ".jpg"
-        if (!image_source.includes("undefined")) {
-            image_append.src = image_source
-            image_box.appendChild(image_append)
-
-            let download = document.createElement("div")
-            download.className = "download"
-            let download_image = document.createElement("img")
-            download_image.src = "images/download.png"
-            download_image.alt = "download"
-            download_image.className = "download_image"
-            download.appendChild(download_image)
-
-            image_box.appendChild(download)
-
-
-        }
-        row.appendChild(image_box)
-    }
-    document.querySelector(".categories_main").appendChild(row)
-}
-*/
-
-
-
 
 
 
@@ -482,12 +444,10 @@ top_btn = document.querySelector(".back2top");
 top_arrow = top_btn.getElementsByTagName("img")[0];
 
 function open_scroll() {
-    top_btn.style.height = "50px"
-    top_arrow.style.height = "23px"
+    top_btn.style.opacity = "1"
 }
 function close_scroll() {
-    top_btn.style.height = "0"
-    top_arrow.style.height = "0"
+    top_btn.style.opacity = "0"
 }
 
 window.addEventListener("scroll", function (){
