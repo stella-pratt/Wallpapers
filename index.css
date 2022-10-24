@@ -32,8 +32,8 @@ body{
     cursor: pointer;
 }
 .topnav{
-    width: 20%;
-    margin: 0 40%;
+    margin: 0 35%;
+    width: 30%;
     position: absolute;
     display: flex;
     justify-content: left;
@@ -47,8 +47,8 @@ body{
     height: 10vh;
     font-family: 'Work Sans', sans-serif;
     font-weight: 500;
-    font-size: 25px;
-    padding-top: 35px;
+    font-size: 24px;
+    padding-top: 3.75vh;
     list-style: none;
     cursor: pointer;
 }
