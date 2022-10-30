@@ -174,6 +174,7 @@ function refresh_download() {
             let parent_image = button_clicked.closest(".image_box")
             parent_image = parent_image.querySelector(".main_images")
             document.querySelector(".disp_image").src = parent_image.src
+            document.querySelector(".disp_image").alt = parent_image.alt
             document.querySelector("#fourK").href = parent_image.src.replace("/thumbnail/", "/4K/")
             document.querySelector("#fhd").href = parent_image.src.replace("/thumbnail/", "/FHD/")
             document.querySelector("#mobile").href = parent_image.src.replace("/thumbnail/", "/mobile/")

@@ -158,6 +158,7 @@ document.querySelectorAll(".download").forEach(button_clicked => {
         let parent_image = button_clicked.closest(".image_wrapper")
         parent_image = parent_image.querySelector(".page_image")
         document.querySelector(".disp_image").src = parent_image.src
+        document.querySelector(".disp_image").alt = parent_image.alt
         document.querySelector("#fourK").href = parent_image.src.replace("/thumbnail/", "/4K/")
         document.querySelector("#fhd").href = parent_image.src.replace("/thumbnail/", "/FHD/")
         document.querySelector("#mobile").href = parent_image.src.replace("/thumbnail/", "/mobile/")
