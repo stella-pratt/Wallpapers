@@ -364,7 +364,6 @@ window.addEventListener("scroll", function (){
 
 
 
-
 function close_pop_up() {
     pop_up_open = false
     const pop_up = document.querySelector(".pop_up")
