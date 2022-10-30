@@ -59,6 +59,7 @@ function change_os() {
             os_instruction.style.display = "none"
         }
     })
+
 }
 
 change_os()
